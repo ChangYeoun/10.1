@@ -1607,7 +1607,7 @@ if CPU_FREQ_MSM
 
 config MSM_CPU_FREQ_SET_MIN_MAX
 	bool "Set Min/Max CPU frequencies."
-	default n
+	default y
 	help
 	  Allow setting min and max CPU frequencies. Sysfs can be used
 	  to override these values.
@@ -1615,34 +1615,29 @@ config MSM_CPU_FREQ_SET_MIN_MAX
 config MSM_CPU_FREQ_MAX
 	int "Max CPU Frequency"
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
-	default 384000
+	default 1512000
 
 config MSM_CPU_FREQ_MIN
 	int "Min CPU Frequency"
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
-	default 245760
+	default 384000
 
 endif # CPU_FREQ_MSM
 
-config MSM_CPU_AVS
-	bool "Enable software controlled Adaptive Voltage Scaling (AVS)"
-	depends on (ARCH_MSM_SCORPION && QSD_SVS)
-	depends on ARCH_QSD8X50
-	default n
-	select MSM_AVS_HW
-	help
-	  This enables the s/w control of Adaptive Voltage Scaling feature
-	  in Qualcomm ARMv7 CPUs. It adjusts the voltage for each frequency
-	  based on feedback from three ring oscillators in the CPU.
+config USERSPACE_VOLTAGE_CONTROL
+        bool "Enable Userspace CPU Voltage Control"
+        default y
+        help
+          Userspace Voltage Control
 
 config MSM_AVS_HW
-	bool "Enable Adaptive Voltage Scaling (AVS)"
-	default n
-	help
-	  Enable AVS hardware to fine tune voltage at each frequency. The
-	  AVS hardware blocks associated with each Qualcomm ARMv7 cores can
-	  fine tune the voltages based on the feedback from the ring
-	  oscillators.
+        bool "Enable Adaptive Voltage Scaling (AVS)"
+        default n
+        help
+          Enable AVS hardware to fine tune voltage at each frequency. The
+          AVS hardware blocks associated with each Qualcomm ARMv7 cores can
+          fine tune the voltages based on the feedback from the ring
+          oscillators.
 
 config MSM_HW3D
 	tristate "MSM Hardware 3D Register Driver"

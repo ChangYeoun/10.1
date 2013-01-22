@@ -33,13 +33,10 @@ static inline void kgsl_core_debugfs_init(void) { }
 static inline void kgsl_device_debugfs_init(struct kgsl_device *device) { }
 static inline void kgsl_core_debugfs_close(void) { }
 static inline struct dentry *kgsl_get_debugfs_dir(void) { return NULL; }
-<<<<<<< HEAD
-=======
 static inline int kgsl_process_init_debugfs(struct kgsl_process_private *device)
 {
 	return 0;
 }
->>>>>>> 1eb211a... Apollyon musings.
 
 #endif
 
