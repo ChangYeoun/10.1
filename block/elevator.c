@@ -805,6 +805,13 @@ void elv_completed_request(struct request_queue *q, struct request *rq)
 {
 	struct elevator_queue *e = q->elevator;
 
+<<<<<<< HEAD
+=======
+	if (rq->cmd_flags & REQ_URGENT) {
+		q->notified_urgent = false;
+		q->dispatched_urgent = false;
+	}
+>>>>>>> 891826f... block: Add URGENT request notification support to CFQ scheduler
 	/*
 	 * request is released from the driver, io must be done
 	 */
