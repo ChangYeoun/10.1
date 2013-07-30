@@ -141,6 +141,7 @@ obj-$(CONFIG_PM_DEVFREQ)	+= devfreq/
 #MobiCore
 obj-$(CONFIG_MOBICORE_SUPPORT)  += gud/
 
+<<<<<<< HEAD
 #TDMB
 obj-$(CONFIG_LGE_BROADCAST_TDMB) += broadcast/
 
