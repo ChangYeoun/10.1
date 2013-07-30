@@ -32,7 +32,7 @@
 #define DEF_ALLOWED_MAX_FREQ 918000
 #endif
 
-static int enabled;
+static int enabled = 1;
 static struct msm_thermal_data msm_thermal_info;
 static uint32_t limited_max_freq = MSM_CPUFREQ_NO_LIMIT;
 static struct delayed_work check_temp_work;
