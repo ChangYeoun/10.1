@@ -1981,11 +1981,6 @@ struct request *blk_peek_request(struct request_queue *q)
 			 * not be passed by new incoming requests
 			 */
 			rq->cmd_flags |= REQ_STARTED;
-<<<<<<< HEAD
-=======
-			if (rq->cmd_flags & REQ_URGENT)
-				q->dispatched_urgent = true;
->>>>>>> 891826f... block: Add URGENT request notification support to CFQ scheduler
 			trace_block_rq_issue(q, rq);
 		}
 
